@@ -1,14 +1,24 @@
 #include <iostream>
-#include <vector>
-#include <string>
 
 int main()
 {
-  std::vector<std::string> msg{"Hello", "C++", "World", "from", "VS Code", "and the C++ extension!"};
+  const int HEIGHT = 20;
+  const int WIDTH = 2 * HEIGHT;
 
-  for (const std::string &word : msg)
+  for (int y = 0; y < HEIGHT; y++)
   {
-    std::cout << word << " ";
+    for (int x = 0; x < WIDTH; x++)
+    {
+      float normalizedX = (float)x / (WIDTH - 1) - 0.5f;
+      float normalizedY = (float)y / (HEIGHT - 1) - 0.5f;
+
+      if (normalizedX * normalizedX + normalizedY * normalizedY < 0.5f * 0.5f)
+      {
+        std::cout << " ";
+        continue;
+      }
+      std::cout << "█";
+    }
+    std::cout << std::endl;
   }
-  std::cout << std::endl;
 }
