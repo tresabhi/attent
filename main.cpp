@@ -3,7 +3,7 @@
 int main()
 {
   const int HEIGHT = 20;
-  const int WIDTH = 2 * HEIGHT;
+  const int WIDTH = 20;
 
   for (int y = 0; y < HEIGHT; y++)
   {
@@ -14,10 +14,10 @@ int main()
 
       if (normalizedX * normalizedX + normalizedY * normalizedY < 0.5f * 0.5f)
       {
-        std::cout << " ";
+        std::cout << "  ";
         continue;
       }
-      std::cout << "█";
+      std::cout << "██";
     }
     std::cout << std::endl;
   }
